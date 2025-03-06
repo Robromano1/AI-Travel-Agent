@@ -4,6 +4,6 @@ import express from "express";
 
 const router = express.Router();
 
-router.get("/fetchAIAnswer", getAIAnswer);
+router.post("/fetchAIAnswer", getAIAnswer);
 
 export default router;

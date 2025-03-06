@@ -9,7 +9,7 @@ const Form = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    // watch,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -21,6 +21,8 @@ const Form = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        method: "POST",
+        body: JSON.stringify(data),
       });
 
       const response = await resData.json();
@@ -29,7 +31,7 @@ const Form = () => {
       console.error(error);
     }
   };
-  console.log(watch("departingDestination"));
+  // console.log(watch("departingDestination"));
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
